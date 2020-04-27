@@ -1,21 +1,16 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import List from 'components/List';
-import { colorsDark } from 'styles/palette';
+import { connect } from 'react-redux';
+import actions from 'store/story/actions';
+import App from './App';
 
-import { Wrapper, Title } from './styles';
+const mapStateToProps = (state) => ({
+  stories: state.stories,
+  page: state.page,
+  storyIds: state.storyIds,
+  isFetching: state.isFetching,
+});
 
-const App = () => {
-  return (
-    <ThemeProvider theme={colorsDark}>
-      <div>
-        <Wrapper>
-          <Title>Hacker News</Title>
-          <List />
-        </Wrapper>
-      </div>
-    </ThemeProvider>
-  );
-};
+const mapDispatchToProps = (dispatch) => ({
+  fetchStoriesFirstPage: () => dispatch(actions.fetchStoryIDs()),
+});
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
