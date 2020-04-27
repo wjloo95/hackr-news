@@ -5,6 +5,7 @@ import { hasMoreStoriesSelector } from 'store/story/selectors';
 import App from './App';
 
 const mapStateToProps = (state) => ({
+  theme: state.app.theme,
   stories: state.story.stories,
   page: state.story.page,
   storyIds: state.story.storyIds,

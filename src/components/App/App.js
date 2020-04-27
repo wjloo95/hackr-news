@@ -3,13 +3,27 @@ import { ThemeProvider } from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import List from 'components/List';
 import Loader from 'components/Loader';
-import { colorsDark } from 'styles/palette';
+import { colorsDark, colorsLight } from 'styles/palette';
 
 import { Wrapper, Title } from './styles';
 
 class App extends Component {
   componentDidMount() {
     this.props.fetchStoriesFirstPage();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.theme !== this.props.theme) {
+      this.setBodyBackgroundColor();
+    }
+  }
+
+  setBodyBackgroundColor() {
+    if (this.props.theme === 'light') {
+      document.body.style = `background-color: ${colorsLight.background};`;
+    } else {
+      document.body.style = `background-color: ${colorsDark.background};`;
+    }
   }
 
   fetchStories = () => {
@@ -20,10 +34,10 @@ class App extends Component {
   };
 
   render() {
-    const { stories, hasMoreStories } = this.props;
+    const { stories, hasMoreStories, theme } = this.props;
 
     return (
-      <ThemeProvider theme={colorsDark}>
+      <ThemeProvider theme={theme === 'light' ? colorsLight : colorsDark}>
         <div>
           <Wrapper>
             <Title>Hacker News Reader</Title>

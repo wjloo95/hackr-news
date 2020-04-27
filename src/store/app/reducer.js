@@ -1,6 +1,6 @@
 import { actionTypes } from './actions';
 
-const getInitialState = () => ({ theme: 'dark' });
+const getInitialState = () => ({ theme: 'light' });
 
 const app = (state = getInitialState(), { type, payload }) => {
   switch (type) {
