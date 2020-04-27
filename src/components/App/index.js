@@ -8,10 +8,12 @@ import { Wrapper, Title } from './styles';
 const App = () => {
   return (
     <ThemeProvider theme={colorsDark}>
-      <Wrapper>
-        <Title>Hacker News</Title>
-        <List />
-      </Wrapper>
+      <div>
+        <Wrapper>
+          <Title>Hacker News</Title>
+          <List />
+        </Wrapper>
+      </div>
     </ThemeProvider>
   );
 };
