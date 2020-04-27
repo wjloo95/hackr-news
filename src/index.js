@@ -1,15 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import configureStore from 'store';
+
 import App from 'components/App';
 import GlobalStyles from 'styles/globals';
 
 import * as serviceWorker from './serviceWorker';
 
+const store = configureStore({});
+
+console.log(store.getState());
+
 ReactDOM.render(
-  <>
-    <GlobalStyles />
-    <App />
-  </>,
+  <Provider store={store}>
+    <>
+      <GlobalStyles />
+      <App />
+    </>
+  </Provider>,
   document.getElementById('root')
 );
 
