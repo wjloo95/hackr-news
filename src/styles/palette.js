@@ -1,4 +1,4 @@
-export const darkColors = {
+export const colorsDark = {
   background: '#272727',
   backgroundSecondary: '#393C3E',
   text: '#bfbebe',
@@ -6,7 +6,7 @@ export const darkColors = {
   border: '#272727',
 };
 
-export const lightColors = {
+export const colorsLight = {
   background: '#EAEAEA',
   backgroundSecondary: '#F8F8F8',
   text: '#848886',
