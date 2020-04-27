@@ -16,8 +16,8 @@ const Nav = ({ theme, setTheme }) => (
       <Content>
         <NavSection>
           <ExternalLink href="https://gitconnected.com" target="_blank">
-            <Logo src="https://gitconnected.com/public/meta/favicon/gc-fav.png" />{' '}
-            gitconnected
+            <Logo src="https://apprecs.org/gp/images/app-icons/300/64/com.ifdefined.hackernews.jpg" />{' '}
+            Hackr News
           </ExternalLink>
         </NavSection>
         <NavSection>

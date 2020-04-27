@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import List from 'components/List';
+import Nav from 'components/Nav';
 import Loader from 'components/Loader';
 import { colorsDark, colorsLight } from 'styles/palette';
 
@@ -10,6 +11,7 @@ import { Wrapper, Title } from './styles';
 class App extends Component {
   componentDidMount() {
     this.props.fetchStoriesFirstPage();
+    this.setBodyBackgroundColor();
   }
 
   componentDidUpdate(prevProps) {
@@ -39,6 +41,7 @@ class App extends Component {
     return (
       <ThemeProvider theme={theme === 'light' ? colorsLight : colorsDark}>
         <div>
+          <Nav />
           <Wrapper>
             <Title>Hacker News Reader</Title>
             <InfiniteScroll
