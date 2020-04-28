@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import List from 'components/List';
+import Grid from 'components/Grid';
 import Nav from 'components/Nav';
 import Loader from 'components/Loader';
 import { colorsDark, colorsLight } from 'styles/palette';
@@ -50,7 +51,8 @@ class App extends Component {
               loader={<Loader />}
               style={{ height: '100%', overflow: 'visible' }}
             >
-              <List stories={stories} />
+              {/* <List stories={stories} /> */}
+              <Grid stories={stories} />
             </InfiniteScroll>
           </Wrapper>
         </>
