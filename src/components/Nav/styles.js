@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { tablet } from 'styles/mediaQueries';
+import { tablet, mobile } from 'styles/mediaQueries';
 
-const HEIGHT = 48;
+const HEIGHT = 80;
 
 export const Header = styled.header`
   background-color: ${({ theme }) => theme.backgroundSecondary};
@@ -32,16 +32,29 @@ export const NavSection = styled.div`
   align-items: center;
 `;
 
-export const Icon = styled.div`
+export const NavText = styled.span`
+  font-size: 25px;
+  line-height: 40px;
+`;
+
+export const Icon = styled.div.attrs((props) => ({
+  type: props.type,
+}))`
   margin-left: 12px;
-  font-size: 18px;
+  font-size: 24px;
   cursor: pointer;
+  color: ${(props) =>
+    props.type === 'sun'
+      ? '#f1c40f'
+      : props.type === 'moon'
+      ? '#8e44ad'
+      : 'inherit'};
 `;
 
 export const Logo = styled.img`
-  height: 20px;
+  height: 40px;
   border-radius: 2px;
-  margin-right: 8px;
+  margin-right: 15px;
 `;
 
 export const Spacer = styled.div`
@@ -50,4 +63,19 @@ export const Spacer = styled.div`
 
 export const ExternalLink = styled.a`
   display: flex;
+`;
+
+export const LinkWrapper = styled.div`
+  display: flex;
+`;
+
+export const SocialLink = styled.a`
+  margin-left: 16px;
+  i {
+    color: ${({ theme }) => theme.text};
+  }
+  ${mobile} {
+    margin-left: 0;
+    margin-right: 16px;
+  }
 `;

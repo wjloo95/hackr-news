@@ -6,7 +6,7 @@ import Nav from 'components/Nav';
 import Loader from 'components/Loader';
 import { colorsDark, colorsLight } from 'styles/palette';
 
-import { Wrapper, Title } from './styles';
+import { Wrapper } from './styles';
 
 class App extends Component {
   componentDidMount() {
@@ -40,10 +40,9 @@ class App extends Component {
 
     return (
       <ThemeProvider theme={theme === 'light' ? colorsLight : colorsDark}>
-        <div>
+        <>
           <Nav />
           <Wrapper>
-            <Title>Hacker News Reader</Title>
             <InfiniteScroll
               dataLength={stories.length}
               next={this.fetchStories}
@@ -54,7 +53,7 @@ class App extends Component {
               <List stories={stories} />
             </InfiniteScroll>
           </Wrapper>
-        </div>
+        </>
       </ThemeProvider>
     );
   }
