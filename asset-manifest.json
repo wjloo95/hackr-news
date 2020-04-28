@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/hackr-news/static/js/main.cb77d50d.chunk.js",
+    "main.js.map": "/hackr-news/static/js/main.cb77d50d.chunk.js.map",
+    "runtime-main.js": "/hackr-news/static/js/runtime-main.298bff04.js",
+    "runtime-main.js.map": "/hackr-news/static/js/runtime-main.298bff04.js.map",
+    "static/js/2.e09635c4.chunk.js": "/hackr-news/static/js/2.e09635c4.chunk.js",
+    "static/js/2.e09635c4.chunk.js.map": "/hackr-news/static/js/2.e09635c4.chunk.js.map",
+    "index.html": "/hackr-news/index.html",
+    "precache-manifest.a41238c209bf27654b15bec45013bfb4.js": "/hackr-news/precache-manifest.a41238c209bf27654b15bec45013bfb4.js",
+    "service-worker.js": "/hackr-news/service-worker.js",
+    "static/js/2.e09635c4.chunk.js.LICENSE.txt": "/hackr-news/static/js/2.e09635c4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.298bff04.js",
+    "static/js/2.e09635c4.chunk.js",
+    "static/js/main.cb77d50d.chunk.js"
+  ]
+}
