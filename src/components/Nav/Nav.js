@@ -11,7 +11,7 @@ import {
   ExternalLink,
 } from './styles';
 
-const Nav = ({ theme, setTheme }) => (
+const Nav = ({ theme, layout, setLayout, setTheme }) => (
   <>
     <Header>
       <Content>
@@ -22,6 +22,15 @@ const Nav = ({ theme, setTheme }) => (
           </ExternalLink>
         </NavSection>
         <NavSection>
+          {layout === 'list' ? (
+            <Icon onClick={() => setLayout('grid')}>
+              <i className="fas fa-th-list" />
+            </Icon>
+          ) : (
+            <Icon onClick={() => setLayout('list')}>
+              <i className="fas fa-th-large" />
+            </Icon>
+          )}
           {theme === 'light' ? (
             <Icon onClick={() => setTheme('dark')} type="sun">
               <i className="fas fa-sun"></i>
