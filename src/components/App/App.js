@@ -37,7 +37,7 @@ class App extends Component {
   };
 
   render() {
-    const { stories, hasMoreStories, theme } = this.props;
+    const { stories, hasMoreStories, theme, layout } = this.props;
 
     return (
       <ThemeProvider theme={theme === 'light' ? colorsLight : colorsDark}>
@@ -51,8 +51,11 @@ class App extends Component {
               loader={<Loader />}
               style={{ height: '100%', overflow: 'visible' }}
             >
-              {/* <List stories={stories} /> */}
-              <Grid stories={stories} />
+              {layout === 'list' ? (
+                <List stories={stories} />
+              ) : (
+                <Grid stories={stories} />
+              )}
             </InfiniteScroll>
           </Wrapper>
         </>
